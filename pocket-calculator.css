@@ -1,0 +1,41 @@
+h1{
+  text-align: center;
+}
+
+div.calculator{
+  height: 1000px;
+  width: 800px;
+  margin: 0 auto;
+  border: solid, 2px, black;
+}
+
+.number{
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  float: left;
+  border: 1px solid darkgray;
+}
+
+.bottom-row{
+  height: 50px;
+  width: 75px;
+  border: 1px solid darkgray;
+  float: left;
+}
+
+.operation{
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  float: left;
+  border: solid 1px green;
+}
+
+.operation2{
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  float: left;
+  border: solid 1px turquoise;
+}
