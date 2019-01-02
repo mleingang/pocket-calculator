@@ -9,6 +9,10 @@ h1{
   border-bottom: 1px solid black;
   grid-column: 1 /5;
   background-color: #e3fade;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 50px;
+  text-align: right;
+  padding-right: 30px;
 }
 
 #calculator{
@@ -18,7 +22,7 @@ h1{
   height: 500px;
   width: 350px;
   margin: 0 auto;
-  border: 2px solid black;
+  border: 3px solid black;
 }
 
 .number{
