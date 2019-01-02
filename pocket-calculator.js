@@ -69,3 +69,38 @@ function num0(){
   answer = answer + "0";
   output.innerHTML = answer;
 }
+
+function clean(){
+  let output = document.getElementById("display-bar");
+
+  answer = answer + "";
+  output.innerHTML = "0";
+}
+
+function add(){
+  let output = document.getElementById("display-bar");
+
+  answer = answer + "+";
+  output.innerHTML = answer;
+}
+
+function sub(){
+  let output = document.getElementById("display-bar");
+
+  answer = answer + "-";
+  output.innerHTML = answer;
+}
+
+function mult(){
+  let output = document.getElementById("display-bar");
+
+  answer = answer + "x";
+  output.innerHTML = answer;
+}
+
+function divide(){
+  let output = document.getElementById("display-bar");
+
+  answer = answer + "÷";
+  output.innerHTML = answer;
+}
