@@ -6,7 +6,7 @@ h1{
 }
 
 #display-bar{
-  border-bottom: 1px solid black;
+  border: 2px solid black;
   grid-column: 1 /5;
   background-color: #e3fade;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -22,9 +22,9 @@ h1{
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(4, 1fr);
   height: 500px;
-  width: 350px;
+  width: 330px;
   margin: 0 auto;
-  border: 3px solid black;
+  border: 2px solid black;
 }
 
 .number{

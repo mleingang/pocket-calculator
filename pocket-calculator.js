@@ -73,8 +73,8 @@ function num0(){
 function clean(){
   let output = document.getElementById("display-bar");
 
-  answer = answer + "";
-  output.innerHTML = "0";
+  answer = ""
+  output.innerHTML = answer;
 }
 
 function add(){
