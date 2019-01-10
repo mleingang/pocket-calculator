@@ -12,29 +12,29 @@
     <div id="calculator">
       <div id="display">0</div>
 
-      <button class="operation2" id="buttonAC" onclick="clean();">AC</button>
-      <button class="operation2" id="buttonPerc">%</button>
-      <button class="operation2" id="buttonNeg">+/-</button>
-      <button class="operation" id="buttonAdd" onclick="add();">+</button>
+      <input type="button" class="operation2" value="AC" onclick="clean();"/>
+      <input type="button" class="operation2" value="%"/>
+      <input type="button" class="operation2" value="+/-"/>
+      <input type="button" class="operation" value="+" onclick="setOperation("add")"/>
 
-      <button class="number" id="button1" onclick="num1();">1</button>
-      <button class="number" id="button2" onclick="num2();">2</button>
-      <button class="number" id="button3" onclick="num3();">3</button>
-      <button class="operation" id="buttonSub" onclick="sub();">-</button>
+      <input type="button" class="number" value="1" onclick="numInput("1")"/>
+      <input type="button" class="number" value="2" onclick="numInput("2")"/>
+      <input type="button" class="number" value="3" onclick="numInput("3")"/>
+      <input type="button" class="operation" value="-" onclick="setOperation("subtract")">
 
-      <button class="number" id="button4" onclick="num4();">4</button>
-      <button class="number" id="button5" onclick="num5();">5</button>
-      <button class="number" id="button6" onclick="num6();">6</button>
-      <button class="operation" id="buttonMult" onclick="mult();">x</button>
+      <input type="button" class="number" value="4" onclick="numInput("4")"/>
+      <input type="button" class="number" value="5" onclick="numInput("5")"/>
+      <input type="button" class="number" value="6" onclick="numInput("6")"/>
+      <input type="button" class="operation" value="x" onclick="setOperation("multiply")"/>
 
-      <button class="number" id="button7" onclick="num7();">7</button>
-      <button class="number" id="button8" onclick="num8();">8</button>
-      <button class="number" id="button9" onclick="num9();">9</button>
-      <button class="operation" id="buttonDiv" onclick="divide();">÷</button>
+      <input type="button" class="number" value="7" onclick="numInput("7")"/>
+      <input type="button" class="number" value="8" onclick="numInput("8")"/>
+      <input type="button" class="number" value="9" onclick="numInput("9")"/>
+      <input type="button" class="operation" value="/" onclick="setOperation("divide")"/>
 
-      <button class="number" id="button0" onclick="num0();">0</button>
-      <button class="number" id="buttonDecimal">.</button>
-      <button class="operation" id="buttonEq">=</button>
+      <input type="button" class="number" value="0" onclick="numInput("0")" id="zero"/>
+      <input type="button" class="number" value="." onclick="insertDecimal(".")"/>
+      <input type="button" class="operation" value="=" onclick="calculate();"/>
 
 
     </div>
