@@ -22,14 +22,23 @@ function numInput(num){
     case 1: storedNum.push("1");
             display.innerHTML += "1";
     case 2: storedNum.push("2");
+            display.innerHTML += "2";
     case 3: storedNum.push("3");
+            display.innerHTML += "3";
     case 4: storedNum.push("4");
+            display.innerHTML += "4";
     case 5: storedNum.push("5");
+            display.innerHTML += "5";
     case 6: storedNum.push("6");
+            display.innerHTML += "6";
     case 7: storedNum.push("7");
+            display.innerHTML += "7";
     case 8: storedNum.push("8");
+            display.innerHTML += "8";
     case 9: storedNum.push("9");
+            display.innerHTML += "9";
     case 0: storedNum.push("0");
+            display.innerHTML += "0";
   }
 
 }
