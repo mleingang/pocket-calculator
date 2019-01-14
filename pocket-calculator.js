@@ -1,6 +1,6 @@
 
 var displayNum = "";
-var storedNum = "";
+var storedNum = [];
 var operation = 0;
 var queuedOperation = 0;
 var calculationFinished = false;
@@ -8,125 +8,95 @@ var calculationFinished = false;
 function clean(){
   var display = document.getElementById("display");
 
-  displayNum = "";
+  displayNum = "0";
   storedNum = "";
   operation = 0;
   queuedOperation = 0;
-  display.value = displayNum;
+  display.innerHTML = displayNum;
 }
 
 function numInput(num){
   var display = document.getElementById("display");
 
-  if ((display.value == "") && num == "0"){
-    return;
-  }else if (calculationFinished == true){
-    display.value = num;
-    calculationFinished = false;
-  }else {
-    display.value += num;
+  switch(num){
+    case 1: storedNum.push("1");
+            display.innerHTML += "1";
+    case 2: storedNum.push("2");
+    case 3: storedNum.push("3");
+    case 4: storedNum.push("4");
+    case 5: storedNum.push("5");
+    case 6: storedNum.push("6");
+    case 7: storedNum.push("7");
+    case 8: storedNum.push("8");
+    case 9: storedNum.push("9");
+    case 0: storedNum.push("0");
   }
+
 }
-// function num1(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "1";
-//   output.innerHTML = number;
-// }
-//
-// function num2(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "2";
-//   output.innerHTML = number;
-// }
-//
-// function num3(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "3";
-//   output.innerHTML = number;
-// }
-//
-// function num4(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "4";
-//   output.innerHTML = number;
-// }
-//
-// function num5(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "5";
-//   output.innerHTML = number;
-// }
-//
-// function num6(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "6";
-//   output.innerHTML = number;
-// }
-//
-// function num7(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "7";
-//   output.innerHTML = number;
-// }
-//
-// function num8(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "8";
-//   output.innerHTML = number;
-// }
-//
-// function num9(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "9";
-//   output.innerHTML = number;
-// }
-//
-// function num0(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "0";
-//   output.innerHTML = number;
-// }
-//
-// function clean(){
-//   let output = document.getElementById("display");
-//
-//   number = ""
-//   output.innerHTML = number;
-// }
-//
-// function add(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "+";
-//   output.innerHTML = number;
-// }
-//
-// function sub(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "-";
-//   output.innerHTML = number;
-// }
-// function mult(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "x";
-//   output.innerHTML = number;
-// }
-//
-// function divide(){
-//   let output = document.getElementById("display");
-//
-//   number = number + "÷";
-//   output.innerHTML = number;
-// }
+
+function insertDecimal(dec){
+  var display = document.getElementById("display");
+
+  for (i = 0; i < display.innerHTML.length; i++){
+    if (display.innerHTML.charAt(i) == "."){
+      return;
+    }
+  }
+  display.innerHTML += dec;
+}
+
+function setOperation(command){
+  var display = document.getElementById("display");
+
+  if (queuedOperation == 0){
+    storedNum = display.innerHTML;
+  }else if (queuedOperation == 1) {
+    storedNum = evalStored + evalDisplay;
+  }else if (queuedOperation == 2) {
+    storedNum = evalStored - evalDisplay;
+  }else if (queuedOperation == 3) {
+    storedNum = evalStored * evalDisplay;
+  }else if (queuedOperation == 4) {
+    storedNum = evalStored / evalDisplay;
+  }
+
+  if (command == "add"){
+    operation = 1;
+  }else if (command = "subtract") {
+    operation = 2;
+  }else if (command = "multiply") {
+    operation = 3;
+  }else if (command = "divide") {
+    operation = 4;
+  }
+
+  queuedOperation - operation;
+  display.innerHTML = "";
+}
+
+function calculate(){
+  var display = document.getElementById("display");
+        displayNum = display.innerHTML;
+  var evalDisplay = eval(displayNum),
+        evalStored = eval(evalStored);
+
+  if (operation == 1){
+    displayNum = evalStored + evalDisplay;
+  }else if (operation == 2) {
+    displayNum = evalStored - evalDisplay;
+  }else if (operation == 3) {
+    displayNum = evalStored * evalDisplay;
+  }else if (operation == 4) {
+    displayNum = evalStored / evalDisplay;
+  }
+
+  display.innerHTML = displayNum;
+  if (operation != 0){
+    calculationFinished = true;
+  }
+
+  operation = 0;
+  queuedOperation = 0;
+  displayNum = "";
+  storedNum = "";
+}
