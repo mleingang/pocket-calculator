@@ -2,7 +2,6 @@
 var displayNum = "";
 var storedNum = [];
 var operation = 0;
-var queuedOperation = 0;
 var calculationFinished = false;
 
 function clean(){
@@ -11,46 +10,46 @@ function clean(){
   displayNum = "0";
   storedNum = [];
   operation = 0;
-  queuedOperation = 0;
   display.innerHTML = displayNum;
 }
 
 function numInput(num){
   var display = document.getElementById("display");
 
-  switch(num){
-    case 1: storedNum.push("1");
-            display.innerHTML += "1";
-            break;
-    case 2: storedNum.push("2");
-            display.innerHTML += "2";
-            break;
-    case 3: storedNum.push("3");
-            display.innerHTML += "3";
-            break;
-    case 4: storedNum.push("4");
-            display.innerHTML += "4";
-            break;
-    case 5: storedNum.push("5");
-            display.innerHTML += "5";
-            break;
-    case 6: storedNum.push("6");
-            display.innerHTML += "6";
-            break;
-    case 7: storedNum.push("7");
-            display.innerHTML += "7";
-            break;
-    case 8: storedNum.push("8");
-            display.innerHTML += "8";
-            break;
-    case 9: storedNum.push("9");
-            display.innerHTML += "9";
-            break;
-    case 0: storedNum.push("0");
-            display.innerHTML += "0";
-            break;
-  }
+  if (num == )
 
+  // switch(num){
+  //   case 1: storedNum.push("1");
+  //           display.innerHTML += "1";
+  //           break;
+  //   case 2: storedNum.push("2");
+  //           display.innerHTML += "2";
+  //           break;
+  //   case 3: storedNum.push("3");
+  //           display.innerHTML += "3";
+  //           break;
+  //   case 4: storedNum.push("4");
+  //           display.innerHTML += "4";
+  //           break;
+  //   case 5: storedNum.push("5");
+  //           display.innerHTML += "5";
+  //           break;
+  //   case 6: storedNum.push("6");
+  //           display.innerHTML += "6";
+  //           break;
+  //   case 7: storedNum.push("7");
+  //           display.innerHTML += "7";
+  //           break;
+  //   case 8: storedNum.push("8");
+  //           display.innerHTML += "8";
+  //           break;
+  //   case 9: storedNum.push("9");
+  //           display.innerHTML += "9";
+  //           break;
+  //   case 0: storedNum.push("0");
+  //           display.innerHTML += "0";
+  //           break;
+  // }
 }
 
 function insertDecimal(dec){
