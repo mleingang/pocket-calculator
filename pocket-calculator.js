@@ -1,51 +1,78 @@
 
+var showZero = true;
 var displayNum = "";
-var storedNum = [];
-var operation = 0;
+var expression = [];
+var numOne = [];
+var operation = "";
+var numTwo = [];
 var calculationFinished = false;
+
+function zero(){
+  var display = document.getElementById("display");
+
+  if (showZero === true){
+    display.innerHTML = 0;
+  } else if (showZero === false){
+    expression.shift(expression[0]);
+    display.innerHTML += "";
+  }
+}
 
 function clean(){
   var display = document.getElementById("display");
 
-  displayNum = "0";
-  storedNum = [];
-  operation = 0;
+  displayNum = "";
+  expression = [];
+  operation = "";
   display.innerHTML = displayNum;
+  showZero = true;
+
+  zero();
 }
 
 function numInput(num){
   var display = document.getElementById("display");
 
   switch(num){
-    case 1: storedNum.push("1");
+    case 1: expression.push("1");
             display.innerHTML += "1";
+            showZero = false;
             break;
-    case 2: storedNum.push("2");
+    case 2: expression.push("2");
             display.innerHTML += "2";
+            showZero = false;
             break;
-    case 3: storedNum.push("3");
+    case 3: expression.push("3");
             display.innerHTML += "3";
+            showZero = false;
             break;
-    case 4: storedNum.push("4");
+    case 4: expression.push("4");
             display.innerHTML += "4";
+            showZero = false;
             break;
-    case 5: storedNum.push("5");
+    case 5: expression.push("5");
             display.innerHTML += "5";
+            showZero = false;
             break;
-    case 6: storedNum.push("6");
+    case 6: expression.push("6");
             display.innerHTML += "6";
+            showZero = false;
             break;
-    case 7: storedNum.push("7");
+    case 7: expression.push("7");
             display.innerHTML += "7";
+            showZero = false;
             break;
-    case 8: storedNum.push("8");
+    case 8: expression.push("8");
             display.innerHTML += "8";
+            showZero = false;
             break;
-    case 9: storedNum.push("9");
+    case 9: expression.push("9");
             display.innerHTML += "9";
+            showZero = false;
             break;
-    case 0: storedNum.push("0");
+    case 0: expression.push("0");
             display.innerHTML += "0";
+            showZero = false;
             break;
   }
 }
@@ -66,41 +93,26 @@ function setOperation(command){
 
 
   if (command == "add"){
-    storedNum.push("+");
-    display.innerHTML = "+";
-  }else if (command = "subtract") {
-    storedNum.push("-");
-    display.innerHTML = "-";
-  }else if (command = "multiply") {
-    storedNum.push("x");
-    display.innerHTML = "x";
-  }else if (command = "divide") {
-    storedNum.push("/");
-    display.innerHTML = "/";
+    expression.push("+");
+    display.innerHTML += "+";
+  }else if (command == "subtract") {
+    expression.push("-");
+    display.innerHTML += "-";
+  }else if (command == "multiply") {
+    expression.push("x");
+    display.innerHTML += "x";
+  }else if (command == "divide") {
+    expression.push("/");
+    display.innerHTML += "/";
   }
 }
 
-// function calculate(){
-//   var display = document.getElementById("display");
-//         displayNum = display.innerHTML;
-//   var evalDisplay = eval(displayNum),
-//         evalStored = eval(evalStored);
-//
-//   if (operation == 1){
-//     displayNum = evalStored + evalDisplay;
-//   }else if (operation == 2) {
-//     displayNum = evalStored - evalDisplay;
-//   }else if (operation == 3) {
-//     displayNum = evalStored * evalDisplay;
-//   }else if (operation == 4) {
-//     displayNum = evalStored / evalDisplay;
-//   }
-  // 
-  // display.innerHTML = displayNum;
-  // if (operation != 0){
-  //   calculationFinished = true;
-  // }
-  //
-  // operation = 0;
-  // displayNum = "";
-  // storedNum = "";
+console.log(expression);
+
+
+function calculate(){
+  calculationFinished = true;
+  let joinedExpression = expression.join();
+  display.innerHTML = eval();
+
+}
