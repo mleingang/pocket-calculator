@@ -30,6 +30,10 @@ h1{
   border-radius: 6px;
 }
 
+::placeholder{
+  color: black;
+}
+
 .number{
   text-align: center;
   border: 1px solid darkgray;

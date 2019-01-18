@@ -1,33 +1,14 @@
 
-var showZero = true;
 var displayNum = "";
 var expression = [];
-var numOne = [];
-var operation = "";
-var numTwo = [];
 var calculationFinished = false;
-
-function zero(){
-  var display = document.getElementById("display");
-
-  if (showZero === true){
-    display.innerHTML = 0;
-  } else if (showZero === false){
-    expression.shift(expression[0]);
-    display.innerHTML += "";
-  }
-}
 
 function clean(){
   var display = document.getElementById("display");
 
   displayNum = "";
   expression = [];
-  operation = "";
-  display.innerHTML = displayNum;
-  showZero = true;
-
-  zero();
+  display.value = displayNum;
 }
 
 function numInput(num){
@@ -35,44 +16,34 @@ function numInput(num){
 
   switch(num){
     case 1: expression.push("1");
-            display.innerHTML += "1";
-            showZero = false;
+            display.value += "1";
             break;
     case 2: expression.push("2");
-            display.innerHTML += "2";
-            showZero = false;
+            display.value += "2";
             break;
     case 3: expression.push("3");
-            display.innerHTML += "3";
-            showZero = false;
+            display.value += "3";
             break;
     case 4: expression.push("4");
-            display.innerHTML += "4";
-            showZero = false;
+            display.value += "4";
             break;
     case 5: expression.push("5");
-            display.innerHTML += "5";
-            showZero = false;
+            display.value += "5";
             break;
     case 6: expression.push("6");
-            display.innerHTML += "6";
-            showZero = false;
+            display.value += "6";
             break;
     case 7: expression.push("7");
-            display.innerHTML += "7";
-            showZero = false;
+            display.value += "7";
             break;
     case 8: expression.push("8");
-            display.innerHTML += "8";
-            showZero = false;
+            display.value += "8";
             break;
     case 9: expression.push("9");
-            display.innerHTML += "9";
-            showZero = false;
+            display.value += "9";
             break;
     case 0: expression.push("0");
-            display.innerHTML += "0";
-            showZero = false;
+            display.value += "0";
             break;
   }
 }
@@ -80,12 +51,12 @@ function numInput(num){
 function insertDecimal(dec){
   var display = document.getElementById("display");
 
-  for (i = 0; i < display.innerHTML.length; i++){
-    if (display.innerHTML.charAt(i) == "."){
+  for (i = 0; i < display.value.length; i++){
+    if (display.value.charAt(i) == "."){
       return;
     }
   }
-  display.innerHTML += dec;
+  display.value += dec;
 }
 
 function setOperation(command){
@@ -94,16 +65,16 @@ function setOperation(command){
 
   if (command == "add"){
     expression.push("+");
-    display.innerHTML += "+";
+    display.value += "+";
   }else if (command == "subtract") {
     expression.push("-");
-    display.innerHTML += "-";
+    display.value += "-";
   }else if (command == "multiply") {
-    expression.push("x");
-    display.innerHTML += "x";
+    expression.push("*");
+    display.value += "x";
   }else if (command == "divide") {
     expression.push("/");
-    display.innerHTML += "/";
+    display.value += "/";
   }
 }
 
@@ -111,8 +82,9 @@ console.log(expression);
 
 
 function calculate(){
-  calculationFinished = true;
-  let joinedExpression = expression.join();
-  display.innerHTML = eval();
+  let joinedExpression = expression.join("");
+  joinedExpression.replace(",", " ");
+  console.log(joinedExpression);
+  display.value = eval(joinedExpression);
 
 }
