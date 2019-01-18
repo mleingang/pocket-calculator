@@ -13,7 +13,7 @@
       <input type="text" placeholder="0" value="" id="display" readonly="readonly" disabled>
 
       <button class="operation2" onclick="clean();">AC</button>
-      <button class="operation2" onclick="setOperation('percent');">%</button>
+      <button class="operation2" onclick="percent();">%</button>
       <button class="operation2" onclick="setOperation('negate');">+/-</button>
       <button class="operation" onclick="setOperation('add');">+</button>
 
@@ -33,7 +33,7 @@
       <button class="operation" onclick="setOperation('divide');">/</button>
 
       <button class="number" id="zero" onclick="numInput(0);">0</button>
-      <button class="number" onclick="insertDecimal('.');">.</button>
+      <button class="number" onclick="setOperation('deci');">.</button>
       <button class="operation" onclick="calculate();">=</button>
 
 

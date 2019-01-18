@@ -6,6 +6,7 @@ h1{
 }
 
 #display{
+  color: black;
   border: 1px solid black;
   grid-column: 1 /5;
   background-color: #e3fade;
