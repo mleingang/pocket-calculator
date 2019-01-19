@@ -5,6 +5,10 @@ h1{
   margin: 50px;
 }
 
+button.operation{
+  font-weight: bold;
+}
+
 #display{
   color: black;
   border: 1px solid black;

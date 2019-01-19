@@ -1,7 +1,5 @@
 
-var displayNum = "";
 var expression = [];
-var calculationFinished = false;
 
 function clean(){
   var display = document.getElementById("display");
@@ -14,7 +12,6 @@ function clean(){
 function numInput(num){
   var display = document.getElementById("display");
 
-  if (display.value.length > 11)
     switch(num){
       case 1: expression.push("1");
               display.value += "1";
@@ -70,6 +67,8 @@ function setOperation(command){
     display.value += ".";
   }
 }
+
+console.log(expression);
 
 function percent(){
   var percNum = [];
