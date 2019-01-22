@@ -5,8 +5,9 @@ function clean(){
   var display = document.getElementById("display");
 
   displayNum = "";
-  expression = [];
+  expression.length = 0;
   display.value = displayNum;
+  console.log(expression);
 }
 
 function numInput(num){
@@ -94,9 +95,21 @@ function percent(){
 function negate(){
   var negNum = [];
 
-  // for (var i = 0; expression.length-1; i!=0; i--){
-    negNum.splice(0,"-",expression[i]);
-  // }
+  for (var i = expression.length-1; i!=-1; i--){
+    if((expression[i] == "+") || (expression[i] == "-") || (expression[i] == "x") || (expression[i] == "/")){
+      break;
+    }else {
+      negNum.splice(0, 0, expression[i]);
+      expression.pop();
+      display.value = display.value.substring(0, display.value.length-1);
+    }
+  }
+
+  negNum.unshift("-");
+  let joinedNegNum = negNum.join("");
+  console.log(joinedNegNum);
+  expression.push(joinedNegNum);
+  display.value = joinedNegNum;
 }
 
 function calculate(){
