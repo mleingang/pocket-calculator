@@ -73,26 +73,34 @@ console.log(expression);
 function percent(){
   var percNum = [];
 
-  for (var i = (expression.length - 1); i != 0; i--){
+  for (var i = (expression.length - 1); i != -1; i--){
     if((expression[i] == "+") || (expression[i] == "-") || (expression[i] == "x") || (expression[i] == "/")){
       break;
     }else {
       percNum.splice(0, 0, expression[i]);
+      expression.pop();
+      display.value = display.value.substring(0, display.value.length-1);
     }
   }
 
-  let joinedPercNum = percNum.join();
-  joinedPercNum.replace(",", " ");
-  for (var i = (joinedPercNum.length - 1); i != 0; i--)
+  let joinedPercNum = percNum.join("");
   console.log(joinedPercNum);
   joinedPercNum = parseFloat(joinedPercNum) / 100;
-
+  expression.push(joinedPercNum);
+  display.value += joinedPercNum;
   console.log(joinedPercNum);
+}
+
+function negate(){
+  var negNum = [];
+
+  // for (var i = 0; expression.length-1; i!=0; i--){
+    negNum.splice(0,"-",expression[i]);
+  // }
 }
 
 function calculate(){
   let joinedExpression = expression.join("");
-  joinedExpression.replace(",", " ");
   console.log(joinedExpression);
   display.value = eval(joinedExpression);
 }
