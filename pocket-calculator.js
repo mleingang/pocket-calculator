@@ -73,12 +73,25 @@ function setOperation(command){
     expression.push("/");
     display.value += "/";
   }else if (command == "deci") {
-    expression.push(".");
-    display.value += ".";
+    if (listNumHasDeci(expression)){
+    }else {
+      expression.push(".");
+      display.value += ".";
+    }
   }
 }
 
 console.log(expression);
+
+function listNumHasDeci(expressionArray){
+  for (var i = expressionArray.length-1; i!=-1; i--){
+    if((expressionArray[i] == "+") || (expressionArray[i] == "-") || (expressionArray[i] == "x") || (expressionArray[i] == "/")){
+      return false;
+    }else if (expressionArray[i] == ".") {
+      return true;
+    }
+  }
+}
 
 function percent(){
   var percNum = [];
@@ -88,8 +101,8 @@ function percent(){
       break;
     }else {
       percNum.splice(0, 0, expression[i]);
-      expression.pop();
-      display.value = display.value.substring(0, display.value.length-1);
+      let lastNum = expression.pop();
+      display.value = display.value.substring(0, display.value.length-lastNum.length);
     }
   }
 
