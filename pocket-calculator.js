@@ -1,17 +1,26 @@
 
 var expression = [];
 
+// states of the program's operation
+const COLLECTING_DATA = 1;
+const CALCULATING = 2;
+var state = COLLECTING_DATA;
+
 function clean(){
   var display = document.getElementById("display");
 
   displayNum = "";
   expression.length = 0;
   display.value = displayNum;
-  console.log(expression);
 }
 
 function numInput(num){
   var display = document.getElementById("display");
+
+  if (state == CALCULATING){
+    clean();
+  }
+  state = COLLECTING_DATA;
 
     switch(num){
       case 1: expression.push("1");
@@ -49,7 +58,7 @@ function numInput(num){
 
 function setOperation(command){
   var display = document.getElementById("display");
-
+  state = COLLECTING_DATA;
 
   if (command == "add"){
     expression.push("+");
@@ -113,6 +122,7 @@ function negate(){
 }
 
 function calculate(){
+  state = CALCULATING;
   let joinedExpression = expression.join("");
   console.log(joinedExpression);
   display.value = eval(joinedExpression);
